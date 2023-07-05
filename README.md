@@ -55,7 +55,7 @@ GitHub.
 `your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
 
 ```json
-"homepage": "https://your_username.github.io/your_repo_name/"
+"homepage": "https://StanislavPoponia.github.io/goit-react-hw-05-movies/"
 ```
 
 Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
@@ -95,7 +95,7 @@ GitHub.
 `basename` точное название твоего репозитория. Слеш в начале строки обязателен.
 
 ```jsx
-<BrowserRouter basename="/your_repo_name">
+<BrowserRouter basename="/goit-react-hw-05-movies">
   <App />
 </BrowserRouter>
 ```
