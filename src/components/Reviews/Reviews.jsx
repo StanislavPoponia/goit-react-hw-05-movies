@@ -31,8 +31,8 @@ const Reviews = () => {
       <>
         {reviews.length > 0 &&
           reviews.map(({ id, author, content }) => (
-            <Wrapper>
-              <Item key={id}>
+            <Wrapper  key={id}>
+              <Item>
                 <p>
                   <b>Author: {author}</b>
                 </p>
