@@ -1,8 +1,7 @@
 import { useEffect, useState, Suspense } from 'react';
 import { Outlet, useParams, useLocation, useNavigate } from 'react-router-dom';
-import { TiChevronLeft } from 'react-icons/ti';
 import { getMovieById } from 'services/api';
-import blankImage from '../../images/white_image.png';
+import blankImage from '../../images/image.png';
 import React from 'react';
 import {
   MovieCard,
@@ -60,7 +59,6 @@ const MovieDetails = () => {
       <Wrapper>
         {location.state?.from && (
           <BackButton onClick={handleGoBackButton}>
-            <TiChevronLeft />
             <span>Go back</span>
           </BackButton>
         )}

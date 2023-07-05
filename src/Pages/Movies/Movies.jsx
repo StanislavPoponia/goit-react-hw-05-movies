@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Notiflix from 'notiflix';
 import { getMoviesByName } from 'services/api';
 import { List, ListItem, MovieLink, Form } from './Movies.styled';
@@ -67,7 +65,7 @@ const Movies = () => {
           Search
         </Button>
       </Form>
-      <ToastContainer />
+     
       <>
         {isLoading && <p>Loading...</p>}
         {movieName && (

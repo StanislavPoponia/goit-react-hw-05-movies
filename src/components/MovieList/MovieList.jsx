@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { TrendingMovieLink, List, ListItem } from './MovieList.styled';
+import { MovieLink, List, ListItem } from './MovieList.styled';
 
 const MovieList = ({ trending, loading }) => {
   const location = useLocation();
@@ -12,12 +12,12 @@ const MovieList = ({ trending, loading }) => {
         <List>
           {trending.map(({ id, title, name }) => (
             <ListItem key={id}>
-              <TrendingMovieLink
+              <MovieLink
                 to={`movies/${id}`}
                 state={{ from: location.pathname }}
               >
                 {title || name}
-              </TrendingMovieLink>
+              </MovieLink>
             </ListItem>
           ))}
         </List>

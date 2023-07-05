@@ -4,7 +4,7 @@ const NotFound = () => {
   return (
     <Wrapper>
       <h1>{' something wrong.'}</h1>
-      <p>Here are some help links:</p>
+      <p>Links:</p>
       <ul>
         <ListItem>
           <InfoLink to="/">Home</InfoLink>

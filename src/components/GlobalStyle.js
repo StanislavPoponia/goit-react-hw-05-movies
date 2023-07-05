@@ -6,11 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   width: 100vw;
   overflow-x: hidden;
 }
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+
 img {
   display: block;
   max-width: 100%;
@@ -18,7 +14,7 @@ img {
 }
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
     -webkit-font-smoothing: antialiased;

@@ -16,10 +16,10 @@ export const InfoLink = styled(Link)`
   color: black;
   text-decoration: none;
   font-weight: 500;
-
   :hover {
     color: #ab47bc;
   }
+  margin-bottom: 10px;
 `;
 
 export const InfoItem = styled.li`
@@ -29,10 +29,11 @@ export const InfoItem = styled.li`
 `;
 
 export const Title = styled.h2`
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 export const ImageWrapper = styled.div`
+margin-bottom: 20px;
   width: 270px;
 `;
 
@@ -43,13 +44,11 @@ export const ExtraInfoSection = styled.div`
 `;
 
 export const ListItem = styled.li`
-  :not(:last-child) {
-    margin-bottom: 10px;
-  }
+  margin-bottom: 10px;
 `;
 
 export const ExtraInfoTitle = styled.h3`
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 export const MovieInfo = styled.div`
@@ -68,7 +67,6 @@ export const BackButton = styled.button`
   display: flex;
   align-items: center;
   cursor: pointer;
-
   background-color: #4cd964;
   color: white;
   text-decoration: none;
