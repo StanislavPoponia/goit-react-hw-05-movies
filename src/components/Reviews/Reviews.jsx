@@ -15,7 +15,7 @@ const Reviews = () => {
         const data = await getReviews(movieId);
         setReviews(data);
       } catch (e) {
-        console.log(e, 'There has been a mistake');
+        console.log(e);
       } finally {
         setIsLoading(false);
       }
@@ -25,25 +25,25 @@ const Reviews = () => {
 
   return (
     <Section>
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <>
-          {reviews.length > 0 &&
-            reviews.map(({ id, author, content }) => (
-              <Wrapper>
-                <Item key={id}>
-                  <p>
-                    <b>Author: {author}</b>
-                  </p>
-                  <p>"{content}"</p>
-                </Item>
-              </Wrapper>
-            ))}
-        </>
-      )}
-      {!reviews.length && <p>There are no reviews for this film yet.</p>}
-    </Section>
+    {isLoading ? (
+      <div>Loading...</div>
+    ) : (
+      <>
+        {reviews.length > 0 &&
+          reviews.map(({ id, author, content }) => (
+            <Wrapper>
+              <Item key={id}>
+                <p>
+                  <b>Author: {author}</b>
+                </p>
+                <p>"{content}"</p>
+              </Item>
+            </Wrapper>
+          ))}
+      </>
+    )}
+    {!reviews.length && <p>There are no reviews for this film.</p>}
+  </Section>
   );
 };
 

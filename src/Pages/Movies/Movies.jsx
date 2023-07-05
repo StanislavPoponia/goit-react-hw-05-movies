@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Notiflix from 'notiflix';
 import { getMoviesByName } from 'services/api';
 import { List, ListItem, MovieLink, Form } from './Movies.styled';
 import React from 'react';
+
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -22,10 +23,7 @@ const Movies = () => {
     e.preventDefault();
     const query = e.target.movie.value;
     if (!query) {
-      toast('Enter please a movie name.', {
-        position: toast.POSITION.TOP_CENTER,
-        autoClose: 3000,
-      });
+      Notiflix.Notify.info('Enter please a movie name.', );
     }
     setSearchParams(query !== '' ? { query } : {});
   };
@@ -54,17 +52,17 @@ const Movies = () => {
         <Input
           type="text"
           name="movie"
-          placeholder="Enter the movie..."
-          autoComplete="off"
-          color="secondary"
+          placeholder="Enter the movie"
+          autoComplete="on"
+          color="success"
           defaultValue={movieName}
         />
         <Button
           type="submit"
-          variant="outlined"
-          color="secondary"
+          variant="contained"
+          color="success"
           size="small"
-          endIcon={<AiOutlineSearch />}
+         
         >
           Search
         </Button>
