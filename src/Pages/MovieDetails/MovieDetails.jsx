@@ -42,7 +42,7 @@ const MovieDetails = () => {
   }, [movieId]);
 
   const handleGoBackButton = () => {
-    navigate(location.state.from);
+    navigate(location.state?.from || '/');
   };
   if (!movie) {
     return;
@@ -57,11 +57,9 @@ const MovieDetails = () => {
   return (
     <>
       <Wrapper>
-        {location.state?.from && (
-          <BackButton onClick={handleGoBackButton}>
+       <BackButton onClick={handleGoBackButton}>
             <span>Go back</span>
           </BackButton>
-        )}
         {isLoading ? (
           <div>Loading...</div>
         ) : (

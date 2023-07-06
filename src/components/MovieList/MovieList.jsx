@@ -14,7 +14,7 @@ const MovieList = ({ trending, loading }) => {
             <ListItem key={id}>
               <MovieLink
                 to={`/movies/${id}`}
-                state={{ from: location.pathname }}
+                state={{ from: location }}
               >
                 {title || name}
               </MovieLink>
