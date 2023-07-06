@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import {  useSearchParams } from 'react-router-dom';
 import { getMoviesByName } from 'services/api';
 import React from 'react';
 import MovieList from 'components/MovieList/MovieList';
@@ -10,9 +10,7 @@ const Movies = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
-  const location = useLocation();
-  const fullPath = location.pathname + location.search;
-  const movieName = searchParams.get('query');
+   const movieName = searchParams.get('query');
 
   const handleSubmit = query => {
     setSearchParams(query !== '' ? { query } : {});
