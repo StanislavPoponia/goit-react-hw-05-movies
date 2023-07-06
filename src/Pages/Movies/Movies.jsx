@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import Input from '@mui/material/Input';
-import Button from '@mui/material/Button';
-import Notiflix from 'notiflix';
 import { getMoviesByName } from 'services/api';
-import { List, ListItem, MovieLink, Form } from './Movies.styled';
 import React from 'react';
-
+import MovieList from 'components/MovieList/MovieList';
+import { SearchForm } from 'components/Form/Form';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -17,12 +14,7 @@ const Movies = () => {
   const fullPath = location.pathname + location.search;
   const movieName = searchParams.get('query');
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const query = e.target.movie.value;
-    if (!query) {
-      Notiflix.Notify.info('Enter please a movie name.', );
-    }
+  const handleSubmit = query => {
     setSearchParams(query !== '' ? { query } : {});
   };
 
@@ -46,38 +38,11 @@ const Movies = () => {
 
   return (
     <div>
-      <Form onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          name="movie"
-          placeholder="Enter the movie"
-          autoComplete="on"
-          color="success"
-          defaultValue={movieName}
-        />
-        <Button
-          type="submit"
-          variant="contained"
-          color="success"
-          size="small"
-         
-        >
-          Search
-        </Button>
-      </Form>
-     
+    <SearchForm onSubmit={handleSubmit}/>
       <>
         {isLoading && <p>Loading...</p>}
         {movieName && (
-          <List>
-            {movies.map(({ id, title, name }) => (
-              <ListItem key={id}>
-                <MovieLink to={`${id}`} state={{ from: fullPath }}>
-                  {title || name}
-                </MovieLink>
-              </ListItem>
-            ))}
-          </List>
+         <MovieList trending={movies} loading={isLoading} />
         )}
       </>
     </div>

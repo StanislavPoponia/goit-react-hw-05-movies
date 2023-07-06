@@ -13,7 +13,7 @@ const MovieList = ({ trending, loading }) => {
           {trending.map(({ id, title, name }) => (
             <ListItem key={id}>
               <MovieLink
-                to={`movies/${id}`}
+                to={`/movies/${id}`}
                 state={{ from: location.pathname }}
               >
                 {title || name}
